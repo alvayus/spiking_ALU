@@ -1,0 +1,51 @@
+--------------------
+ADDER
+--------------------
+Neurons
+
+Para n_bits > 1
+
+5 * (n - 1)
+
+2 * (n - 1) + (5 * (n - 2) ^ 2 + 5 * (n - 2)) / 2 <- Sale de una progresión aritmética para los n - 2 últimos números con valor 5
+2 * (n - 1) + (5 * (n - 2) ^ 2 + 5 * (n - 2)) / 2
+
+
+6 + 18 * (n - 1)
+
+= 5 * (n - 2) ^ 2 + 5 * (n - 2) + 27 * (n - 1) + 6
+
+Synapses
+
+Half Adder -> 4 + 7 + 2 = 13
+Full Adder -> 5 + 8 + 9 + 8 + 4 = 34 (cada uno)
+
+Cadenas de operacion e inputs, 1 sinapsis por neurona
+
+Para n_bits > 1
+OP -> 5 * (n - 1)
+A -> 2 * (n - 1) + (5 * (n - 2) ^ 2 + 5 * (n - 2)) / 2
+B -> 2 * (n - 1) + (5 * (n - 2) ^ 2 + 5 * (n - 2)) / 2
+
+--------------------
+DECODER
+--------------------
+Neurons
+
+input -> 2 * n
+middle -> 2 * n + 1
+output -> 2 ^ n - 1
+
+Total = 2^n + 4 * n
+
+Synapses
+
+input -> 2 * n + ((n - 1) * (1 + (n - 1)) / 2 = 
+	2 * n + (n ^ 2 - n) / 2 = 
+	1 / 2 * n ^ 2 + 3 / 2 * n
+middle -> 2 * n + (n + 1) * n = n ^ 2 + 3 * n
+output -> (n + 1) * (2 ^ n - 1) = (n + 1) * 2 ^ n - (n + 1)
+Total = (n + 1) * 2 ^ n + 3 / 2 * n ^ 2 + 7 / 2 * n - 1 
+--------------------
+
+https://www.sangakoo.com/es/temas/suma-de-terminos-de-una-progresion-aritmetica
